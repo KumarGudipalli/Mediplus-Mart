@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <!-- <script src="main.js"></script> -->
+
+    <style></style>
+  </head>
+  <body>
+    <!-- Nav bar starts here -->
+    <div class="nav-bar" style="position: sticky">
+      <!-- Top nav bar starts here -->
+      <div class="top-nav flex row" style="border: none">
+        <div class="left-div">
+          <a href="home.html"
+            ><div class="logo">MedPlus <span>Mart</span></div></a
+          >
+        </div>
+        <div class="right-div flex row">
+          <div style="display: flex; align-items: center; gap: 10px">
+            <span
+              id="userNameSpan"
+              style="
+                font-size: 18px;
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                cursor: pointer;
+                font-weight: 400;
+              "
+              >Username</span
+            ><i style="font-size: 18px" class="far fa-user-circle"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top nav bar ends here -->
+
+      <!-- location nav bar starts here -->
+      <div
+        class="location-nav flex"
+        style="
+          box-shadow: rgba(8, 8, 8, 0.075) 0px 0.125rem 0.25rem;
+          border-top: none;
+        "
+      >
+        <div class="left-location-div flex border">
+          <span>
+            <i class="fas fa-map-marker-alt"></i>
+          </span>
+          <div>
+            <h3>6,56, Moosapet, Bhavaninagr...</h3>
+            <h4>Home delivery and store pickup available</h4>
+          </div>
+          <button
+            style="
+              padding-inline: 10px;
+              padding-block: 10px;
+              font-weight: 400;
+              margin-left: 30px;
+              background-color: white;
+              color: red;
+              border: 1px solid #444;
+              border-radius: 4px;
+              cursor: pointer;
+            "
+          >
+            Change
+          </button>
+        </div>
+        <p
+          style="
+            font-size: 16px;
+            vertical-align: center;
+            display: flex;
+            align-items: center;
+          "
+        >
+          Shopping Cart & payment
+        </p>
+      </div>
+    </div>
+    <style>
+      .cart-main-div {
+        background: #f8f9fa;
+        border: 0.5px solid #ddd;
+        position: relative;
+      }
+      .cart-products-div {
+        width: 70%;
+        /* border: 2px solid green; */
+        margin: 30px auto;
+        background-color: white;
+      }
+      .cart-product-main-container {
+        /* border: 2px solid blue; */
+        display: flex;
+        flex-direction: column;
+      }
+      .cart-product-main-container > p {
+        font-size: 1rem;
+        display: block;
+        padding-block: 20px;
+        padding-left: 10px;
+      }
+
+      .cart-product-container h1 {
+        /* border: 2px solid black; */
+        margin-left: 20px;
+      }
+
+      .cart-product-card {
+        /* border: 2px solid yellow; */
+        display: flex;
+        margin: auto;
+        gap: 20px;
+        padding: 20px;
+        border-top: 1px solid #ddd;
+      }
+      .card-left-div {
+        display: flex;
+        width: 600px;
+        gap: 30px;
+      }
+      .cart-product-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        gap: 15px;
+      }
+      .product-title {
+        font-size: 1rem;
+      }
+      .product-title:hover {
+        text-decoration: underline;
+        transition: all 0.4s ease;
+      }
+      .card-right-div button {
+        border: 1px solid #dc3545;
+        color: #dc3545;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        background-color: white;
+        gap: 5px;
+        font-size: 12px;
+        font-weight: 500;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      .card-right-div button:hover {
+        color: white;
+        background-color: #dc3545;
+        transition: all 0.5s ease;
+      }
+      .product-total-price {
+        /* text-decoration: line-through; */
+        color: black;
+        font-weight: 500;
+        font-size: 13px;
+      }
+
+      .cart-summary {
+        /* width: 400px; */
+        width: 100%;
+        margin: auto;
+        font-size: 15px;
+        margin-block: 40px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 10px;
+      }
+      .cart-summary table tr,
+      td {
+        padding: 10px;
+      }
+      .payment-button {
+        padding: 10px 20px;
+        background-color: #bc142a;
+        color: white;
+        border: #bc142a;
+        cursor: pointer;
+        text-transform: uppercase;
+      }
+      .payment-button:hover {
+        background-color: #d4102a;
+        transition: all 0.2s ease-in;
+      }
+      .payment-form-div {
+        position: absolute;
+        width: 600px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        padding: 40px 20px;
+        border-radius: 4px;
+        background: white;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px,
+          rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px,
+          rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px,
+          rgba(0, 0, 0, 0.07) 0px 32px 64px;
+        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+          rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+        display: none;
+      }
+    </style>
+
+    <div class="cart-main-div">
+      <div class="cart-products-div">
+        <div class="cart-product-main-container">
+          <p class="shopping-cart-text">Shopping cart</p>
+          <div class="cart-product-container"></div>
+          <div class="cart-summary">
+            <p>Cart-summary</p>
+            <table>
+              <tr>
+                <td>No. of Items-></td>
+                <td id="totalItems"></td>
+              </tr>
+              <tr>
+                <td>Total amount to be paid -></td>
+                <td id="totalAmount">₹ </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <button class="payment-button" onclick="makePayment()">
+              Proceed to payment
+            </button>
+          </div>
+        </div>
+      </div>
+      <style>
+        .payment-form-div input {
+          padding: 10px 20px;
+          display: block;
+        }
+        .payment-form-div form {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          width: 400px;
+          margin: auto;
+        }
+        .payment-form-div button {
+          padding: 10px 30px;
+          width: 200px;
+          margin: auto;
+          background: green;
+          border: none;
+          color: white;
+          font-weight: 600;
+          font-size: 16px;
+          cursor: pointer;
+        }
+        #otpForm {
+          display: none;
+        }
+      </style>
+      <div class="payment-form-div">
+        <form action="" id="paymentForm">
+          <input
+            type="number"
+            id="cardNumber"
+            placeholder="Enter card number"
+          />
+          <input type="number" id="cvv" placeholder="Enter cvv" />
+          <input
+            type="date"
+            name="date"
+            id="expDate"
+            placeholder="Expiry date"
+          />
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Enter your name"
+          />
+          <button id="genOtp">Generate OTP</button>
+        </form>
+        <form action="" id="otpForm">
+          <input
+            type="text"
+            name=""
+            id="otp"
+            placeholder="Enter your otp here"
+          />
+          <button>Pay Now</button>
+        </form>
+      </div>
+    </div>
+  </body>
+  <!-- <script src="mainCaro.js"></script>
+  <script src="main.js"></script> -->
+  <script>
+    var user = localStorage.getItem("user");
+    console.log(user);
+    document.getElementById("userNameSpan").textContent = user;
+
+    var cartItems = JSON.parse(localStorage.getItem("cart"));
+    console.log(cartItems);
+
+    if (cartItems) {
+      cartItems.map(function (item) {
+        var cardLeftDiv = document.createElement("div");
+        cardLeftDiv.setAttribute("class", "card-left-div");
+        var productImg = document.createElement("img");
+        productImg.setAttribute("src", item.imgLink);
+        var cartProductDetails = document.createElement("div");
+
+        cartProductDetails.setAttribute("class", "cart-product-details");
+        var productTitle = document.createElement("a");
+        productTitle.textContent = item.productName;
+        productTitle.setAttribute("class", "product-title");
+        var productTotalPrice = document.createElement("span");
+        productTotalPrice.setAttribute("class", "product-total-price");
+        productTotalPrice.textContent = "Price - ₹ " + item.price;
+        // var productFinalPrice = document.createElement("span");
+        // productFinalPrice.setAttribute("class","product-final-price");
+
+        cartProductDetails.append(productTitle, productTotalPrice);
+        cardLeftDiv.append(productImg, cartProductDetails);
+
+        var cardRightDiv = document.createElement("class", "card-right-div");
+        cardRightDiv.setAttribute("class", "card-right-div");
+        var removeButton = document.createElement("button");
+        removeButton.innerHTML = '<i class="fas fa-trash-alt"></i>Remove';
+        cardRightDiv.append(removeButton);
+
+        var productCard = document.createElement("div");
+        productCard.setAttribute("class", "cart-product-card");
+        productCard.append(cardLeftDiv, cardRightDiv);
+
+        document.querySelector(".cart-product-container").append(productCard);
+      });
+    } else {
+      document.querySelector(".cart-product-container").innerHTML =
+        "<h1>Your cart is empty!<h1>";
+    }
+
+    document.getElementById("totalItems").textContent = cartItems.length;
+
+    var totalAmount = cartItems.reduce(function (acc, item) {
+      return acc + item.price;
+    }, 0);
+
+    document.getElementById("totalAmount").textContent =
+      document.getElementById("totalAmount").textContent +
+      totalAmount.toFixed(2);
+
+    function makePayment() {
+      document.querySelector(".payment-form-div").style.display = "block";
+    }
+
+    document.getElementById("paymentForm"),
+      addEventListener("submit", function (e) {
+        e.preventDefault();
+        document.getElementById("paymentForm").style.display = "none";
+        document.getElementById("otpForm").style.display = "flex";
+      });
+
+    document.getElementById("otpForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var otp = document.getElementById("otp").value;
+      if (otp == "1234") {
+        alert("Successfully payment has done");
+        var container = document.querySelector(".cart-product-container");
+        localStorage.removeItem("cart");
+        container.innerHTML =
+          '<h1 style="margin-left:20x;">Your cart is empty!<h1>';
+        document.querySelector(".payment-form-div").style.display = "none";
+        document.getElementById("totalAmount").textContent = "";
+        document.getElementById("totalItems").textContent = "";
+      } else {
+        alert("Enter correct otp");
+      }
+    });
+  </script>
+</html>
